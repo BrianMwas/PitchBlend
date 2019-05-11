@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title> PitchBlend | {{ title }}</title>
+
+    <link rel="shortcut icon" href="/public/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top" style="opacity: 0.75">
+    <div class="container ">
+        <a href="/blogs/posts" class="navbar navbar-brand text-white" id="brand">
+            <h4>Pitch Blend</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <svg class="toggler" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"
+                height="20px">
+                <g>
+                    <g>
+                        <g>
+                            <circle cx="256" cy="256" r="64"></circle>
+                            <circle cx="256" cy="448" r="64"></circle>
+                            <circle cx="256" cy="64" r="64"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </button>
+        <div class="collapse navbar-collapse justify-content-right" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/blogs/newpost" class="nav-link text-white">New Post</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/blogs/posts" class="nav-link text-white">Posts</a>
+                </li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class=" text-white">{{user.username}}</span>
+                      <img class="img-profile rounded-circle" src="/pageImages/redImages.jpg">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/user/profile">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Profile
+                      </a>
+                
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="/logout">
+                          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Log out
+                      </a>
+                    </div>
+              </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main>
+  @!section('content')
+</main>
+  <script src="/libraries/jquery.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script src="/libraries/bootstrap.js"></script>
+  <script src="/libraries/popper.js"></script>
+  <script src="/libraries/all.min.js"></script>
+  <script src="/js/functions.js"></script>
+  <script type="text/javascript" src="/js/function1.js"></script>
+</body>
+</html>

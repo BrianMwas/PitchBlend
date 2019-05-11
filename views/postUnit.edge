@@ -1,0 +1,46 @@
+@layout('layouts.dashboard')
+
+@section('content')
+    <header  class="postUnitHeader" style="background-image: url('{{post.image}}');">
+        <div class="container">
+            <h2 class="display-3 font-weight-bold text-center text-white">{{post.title}}</h2>
+        </div>
+    </header>
+    <div class="container">
+        <div class="my-4">
+            <h2 class="font-weight-bold display-5 justify-content-center" style="color: #0bedf5">{{post.description}}</h2>
+            <h3 class="text-white font-italic">{{post.user_id.username}}</h3>
+            <p" class="text-white">posted on {{post.createdAt.toDateString()}}</h3>
+            <br>
+            <hr style="color:white">
+            <br>
+            <p class="text-white content">{{post.content}}</p>
+        </div>
+        <br>
+        <hr>
+        <div>
+        <h6 class="text-white h4">Comments</h6>
+            <ul class="list-unstyled">
+                @if(post.comments.length == 0)
+                    <div class="emptyComments">
+                      <h6 class="text-white font-weight-lighter">No comments yet</h6>
+                    </div>
+                @else
+                    @each(comment in post.comments)
+                      <li class='py-2' style="height : auto;">
+                        <h5 class="text-white">
+                          <span class="h5">{{comment.user.username}}</span>
+                          <span class="font-weight-light" style="font-size : .65em">{{comment.createdAt.toDateString()}}</span>
+                        </h5>
+                        <p class="text-white font-weight-light">{{comment.body}}</p>
+                      <li>
+                    @endeach
+                @endif
+            </ul>
+        </div>
+        <hr>
+        <br>
+        <br>
+    </div>
+
+@endsection

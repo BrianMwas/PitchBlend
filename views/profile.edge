@@ -1,0 +1,75 @@
+  @layout('layouts.dashboard')
+  @section('content')
+
+  <div class="jumbotron">
+        <div class="container-fluid">
+            <div class="profile">
+                <div class="img-p">
+                    <img src="/profile/emptyIcon.png" alt="profile pic">
+                </div>
+                <div class="prof-name">
+                    <h1 class="text-dark">{{user.username}}</h1>
+                </div>
+            </div>
+            <div class="edit mt-5 mr-3">
+                <button class="btn bg-primary text-white btn-sm mr-3" id='showEdit'><a class="text-white" style='text-decoration: none' href="/user/profile/{{user._id}}">Edit Profile</a><i class="fa fa-pencil-alt"></i></button>
+                <button class="btn bg-success text-white btn-sm" ><a href="/blogs/newpost" style='text-decoration: none' class='text-white'>Add new Post</a><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+    </div>
+        <main>
+            <div class="container">
+            <h2 class="dispaly-3" style="color: #fff">Profile</h2>
+            @if(error_msg != '')
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{error_msg}}
+                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+              </div>
+          @endif
+          @if(success_msg != '')
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{success_msg}}
+                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+              </div>
+          @endif
+            <hr>
+                <div class="p-prof p-3">
+                        <div class="imagedrag">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4><strong>Username :</strong>{{user.username}}</h4>
+                            <hr>
+                            <h5><strong>First Name :</strong>{{user.firstName}}</h5>
+                            <h5><strong>Second Name :</strong>{{user.secondName}}</h5>
+                            <h5><strong>Email :</strong>{{user.email}}</h5>
+                        </div>
+                </div>
+            <h2 class="dispaly-3 my-2" style="color: #fff">My Blogs</h2>
+            <hr>
+                <div class="p-blogs">
+                @if(!post)
+                    <div class="text-center my-3">
+                        <h4 class="text-white">You have not written any blogs yet</h4>
+                    </div>
+                @else
+                    @each(pst in post)
+                        <div class="p-3 mb-2 bg-light border rounded blgs" style: 'width: 100%'>
+                            <div class='row mb-1'>
+                                <div class='col-lg-12 col-md-12 btn-group'>
+                                    <button class="btn btn-sm btn-warning"><a  href="/blogs/newpost/{{pst._id}}" class=' text-white'>Update</a></button>
+                                    <button class='btn btn-sm btn-danger'><a href="/blogs/delete/{{pst._id}}" onclick="confirmDelete()" class="text-white">Delete</a></button>
+                                </div>
+                            </div>
+                            <h5 style="font-size: 1em">{{pst.title}}</h5>
+                            <h6 style="font-size : .8em">{{pst.description}}</h6>
+                            <p>{{pst.content}}</p>
+                            <a href="/blogs/post/{{pst._id}}" >Read More</a>
+                        </div>
+                    @endeach
+                 @endif
+                </div>
+            </div>
+        </main>
+    </div>
+    @endsection

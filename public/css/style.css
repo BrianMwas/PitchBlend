@@ -1,0 +1,129 @@
+
+.s-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    color: white;
+}
+
+.s-1 .s1-0 {
+    height: auto;
+    width: auto;
+    margin: auto;
+    padding: 5px;
+}
+
+.s-1 .s1-1 {
+    height: auto;
+    width: auto;
+    margin:  40px auto;
+    padding: 5px;
+}
+
+.s-1 .s1-1 svg {
+    height: 4em;
+    width: 1.875em;
+}
+
+.s-2 {
+    height: 100vh;
+    width: 100%;
+    margin: auto auto;
+    color: white;
+}
+
+.s-2 .info {
+    margin:  auto;
+    padding: 10px;
+}
+
+.s-2 .info h1 {
+    font-weight: 100;
+    font-size: 2.5em;
+}
+
+.info-text {
+    padding: 20px 20px 20px 5px;
+	float: left;
+}
+
+.info-text h5{
+    font-family: roboto, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 1.3em;
+}
+
+.img {
+    margin: auto;
+    height: auto;
+    width: auto;
+}
+
+.img img {
+    height: 300px;
+    width: 300px;
+  	background-repeat: no-repeat;
+  	background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.msg-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: auto 0 auto 10px;
+}
+
+.msg-text {
+    font-size: 100%;
+    height: auto;
+    word-wrap: break-word;
+}
+
+.flex .msgSect {
+    background-color: #414141;
+    height: calc(100vh*1/8);
+    width: 100%;
+    font-size: 100%;
+    padding: 20px auto;
+    display: flex;
+    align-items: center;
+}
+
+.flex .msgSect .form {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: 100%;
+}
+
+.rw {
+  display: flex;;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 5px;
+  color: white;
+  width: auto;
+}
+
+.rw div:first-child {
+  width: auto;
+  height: auto;
+  min-width: 1em;
+  min-height: 1em;
+}
+
+
+.rw div:nth-child(2){
+  width: auto;
+  height: auto;
+  min-width: 1em;
+  min-height: 1em;
+}

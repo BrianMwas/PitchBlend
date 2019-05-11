@@ -1,0 +1,47 @@
+@layout('layouts.dashboard');
+
+@section('content')
+<div class="container my-5">
+  <div class="prof-edit-user">
+        @if(success_msg != '')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{success_msg}}
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+            </div>
+        @endif
+         @if(error_msg != '')
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{error_msg}}
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+            </div>
+        @endif
+        <form action="/user/profile/{{user._id}}" method="post">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" value="{{user.username || ''}}"placeholder="Username" class="form-control form-control-sm" required>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="firstname">First name</label>
+                <input type="text" name="firstName" value="{{user.firstName || ''}}" placeholder="First name" class="form-control form-control-sm" required>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="secondname">Second Name</label>
+                <input type="text" name="secondName" value="{{user.secondName || ''}}" placeholder="Second name" class="form-control form-control-sm" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" value="{{ user.email || ''}}" placeholder="Enter your email here" class="form-control form-control-sm" required >
+
+          </div>
+          <button type="submit" name="button" class="btn btn-info w-100">Submit</button>
+        </form>
+  </div>
+</div>
+
+@endsection

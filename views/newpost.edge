@@ -1,0 +1,48 @@
+@layout('layouts.dashboard')
+
+
+@section('content')
+    <div class="container" style:"oveflow-x : hidden">
+        <header style="background-image: url('/pageImages/blackImages.jpg')">
+            <div class="container text-center">
+                <h1 class="moveY text-center"><span>New</span><span>Blog</span></h1>
+            </div>
+        </header>
+        <div class="frm-post">
+        @if(success_msg != '')
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{success_msg}}
+                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+              </div>
+          @endif
+          @if(error_msg != '')
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{error_msg}}
+                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+              </div>
+          @endif
+            <br><br>
+            <form autocomplete="off" method="POST"  action="/blogs/newpost/{{post._id || ''}}" class="my-3 justify-content-center" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" class=" form-control" required title="Please enter your blog's title"
+                        placeholder="Enter your title" value="{{post.title || ''}}"/>
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <input type="text" name="description" class=" form-control" required title="Please enter your blogs description"
+                        placeholder="Enter your description" value="{{post.description || ''}}"/>
+                </div>
+                <div class="from-group my-2">
+                    <label for="image">Enter your file</label>
+
+                    <input type="file" name="image" accept=".png, .jpeg, .jpg" class="form-control" id="file" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="content" id="" cols="30" rows="10" placeholder="Content" spellcheck="true" required>{{post.content || ''}}</textarea>
+                </div>
+                <input type="submit" class="btn btn-primary" value ="post">
+            </form>
+        </div>
+    </div>
+@endsection

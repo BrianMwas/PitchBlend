@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.jumbotron {
+    width: 100%;
+    background-image: url('/profile/emptyIcon.png');
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    margin-bottom: 1rem;
+    background-color: currentColor;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.prof-name {
+    margin: auto 10px;
+    color: white;
+}
+
+.profile .img-p {
+    height: 5em;
+    width: 5em;
+}
+
+.profile .img-p img {
+    height: 4em;
+    width: 4em;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    outline: none;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.edit {
+    display: flex;
+}
+
+.edit button {
+    min-width: 2em;
+}
+ .edit button svg {
+     margin-left: 7px;
+ }
+
+
+ .p-prof {
+        border-radius: 3px;
+        background-color: #100c17b8;
+        min-height: 100px;
+        width: 100%;
+        margin: 40px auto;
+        display: flex;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+           box-shadow: 0px 3px 8px rgba(0, 0, 0, .12);
+           transform: translate3d(0, 0, 0);
+           -webkit-transition: box-shadow .2s ease,
+           background-color .2s ease,
+           -webkit-transform .2s ease;
+           -webkit-transition: box-shadow .2s ease,
+           background-color .2s ease,
+           transform .2s ease;
+           transition: box-shadow .2s ease,
+           background-color .2s ease,
+           transform .2s ease;
+           -webkit-transform: translate3d(0, 0, 0);
+           -moz-transform: translate3d(0, 0, 0);
+           -ms-transform: translate3d(0, 0, 0);
+           -o-transform: translate3d(0, 0, 0);
+}
+
+ .p-blogs {
+     height: auto;
+     width: 100%;
+     margin: auto;
+     border-radius: 3px ;
+     -webkit-border-radius: 3px ;
+     -moz-border-radius: 3px ;
+     -ms-border-radius: 3px ;
+     -o-border-radius: 3px ;
+}
+
+
+.imagedrag {
+    padding: 1.3rem;
+    margin: auto 10px;
+    height: 3.8rem;
+    width: 3.8rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: rgb(238, 235, 235);
+}
+
+.contact-details {
+        font-size: .7em;
+        padding: 10px;
+        color: white
+}
+
+.contact-details h5 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.contact-details strong {
+    font-weight: 500;
+    margin-right: 10px
+}
+
+.p-blogs {
+    min-width: 70%;
+    max-width: 80%;
+}
+.blgs {
+    height: auto;
+    margin: 20px auto;
+    min-width: 40%;
+    max-width: 500px;
+}
+
+.blgs p {
+    font-size: .75em;
+}
+
+.p-blogs .blgs:hover {
+    box-shadow: 0px px 10px rgba(0, 0, 0, .12);
+    background-color: #E1EDEB;
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: box-shadow .2s ease,    background-color .2s ease,    -webkit-transform .2s ease;
+    -webkit-transition: box-shadow .2s ease,    background-color .2s ease,    transform .2s ease;
+    transition: box-shadow .2s ease,    background-color .2s ease,    transform .2s ease;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+}
+
+.edt {
+    height: auto;
+    width: auto;
+    position: relative;
+    right: 8px;
+    bottom :-5px;
+}
+
+.edt svg {
+    height: 18px;
+    width: 18px;
+}
+
+.edit-frm {
+    border-left:  2px solid #fff;
+}
+
+.prof-edit-user {
+  margin: auto;
+  min-width: 35vw;
+  width: 80%;
+}
+
+.prof-edit-user label {
+  float: left;
+  color: white;
+}

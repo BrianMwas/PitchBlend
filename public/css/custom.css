@@ -1,0 +1,335 @@
+html {
+    font-family: Raleway, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+    background-image: linear-gradient(to top left, #0bedf5, #100c17);
+     background-attachment: fixed;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     perspective: 1px;
+     height: auto;
+     overflow-y: scroll;
+     transform-style: preserve-3d;
+
+}
+main {
+    margin-bottom: 20px;
+}
+
+.home-main {
+    background-image: linear-gradient(to top left, #0bedf5, #100c17);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.home-intro {
+    text-align: center;
+    padding-top: 100px;
+    color: white;
+    font-family: gravity;
+}
+
+.navbar-toggler, .navbar-toggler:link, .navbar-toggler:focus, .navbar-toggler:active {
+    outline: none;
+    border: none;
+}
+
+.justify-content-right {
+    justify-content: flex-end;
+}
+
+nav {
+    background-color: transparent;
+}
+header .container h1 span:nth-child(1) {
+    padding: 3px;
+    margin-right: 5px;
+    font-family: roboto, arial;
+    color: rgb(66, 65, 66);
+    font-weight: 100;
+    border: 0.1em solid rgba(255, 255, 255, 0.836);
+    border-radius: 2px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+header .container h1 span:nth-child(2) {
+    padding: 2px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-bottom: 0.1em solid rgb(66, 65, 66);
+    color: rgba(255, 255, 255, 0.849);
+}
+
+
+header .container h1 {
+    padding: 1em;
+    font-family: poppins-regular;
+    z-index: 1;
+}
+
+header {
+    height: 400px;
+    background-repeat:  no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-origin: border-box;
+    overflow: hidden;
+}
+
+svg,
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:hover {
+    outline: none;
+    border: none;
+    fill: #1e59d6;
+}
+.card {
+    -webkit-box-shadow: 0px 0px 10px -1px #444444;
+    -moz-box-shadow: 0px 0px 10px -1px #444444;
+    box-shadow: 0px 0px 10px -1px #444444;
+}
+
+
+svg:hover {
+    fill: #0bedf5;
+    transition-property: fill;
+    transition: .2s .75s .5s;
+    -webkit-transition: .2s .75s .5s;
+    -moz-transition: .2s .75s .5s;
+    -ms-transition: .2s .75s .5s;
+    -o-transition: .2s .75s .5s;
+}
+
+.post, .frm-post {
+    min-width: 40%;
+    max-width: 500px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+}
+.frm-post label, .fa{
+    color: white;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin: 0;
+    padding-left: 10px;
+}
+
+.user span:nth-child(2) {
+    margin: auto 5px;
+}
+
+.user span:first-of-type {
+    padding: 10px;
+}
+
+
+.user .userPhoto {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    outline: none;
+    border: none;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card-body {
+    margin-top: 0;
+}
+
+.frm {
+    text-align: center;
+    margin: 40px auto;
+    height: 50%;
+    font-family: roboto;
+}
+
+.frm-head {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.frm-wrap {
+    display: inline-block;
+}
+
+.frm-form form label {
+    float: left;
+    color: white;
+}
+
+
+.bg-gradient-primary {
+    background-color: orange;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, orangered), to(orange));
+    background-image: linear-gradient(180deg, orange 10%, orangered 100%);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    overflow: hidden
+}
+
+
+
+.regIcon {
+    align-self: center;
+    margin-bottom: 40px;
+}
+
+.usr {
+    /* text-indent: 5rem; */
+    border-radius: 10rem;
+    text-indent: 9px;
+}
+
+.row .in a:hover {
+    color: white;
+}
+
+.btn-google {
+    background-color: red;
+    color: #fff;
+    border-color: #fff;
+    border-radius: 10rem;
+    padding: .75rem 1rem;
+}
+
+.btn-facebook {
+    color: #fff;
+    border-color: white;
+    background-color: #3b5998;
+    padding: .75rem 1rem;
+}
+
+.out a {
+    color: blue;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.out a :hover {
+    color: skyblue;
+}
+
+
+/* Log In */
+.bg-gradient-login {
+    background-color: #4e73df;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #4e73df), to(#224abe));
+    background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.usr a:hover {
+    color: white;
+}
+
+.login-img {
+    align-self: center;
+    justify-content: center;
+}
+.content {
+  letter-spacing: .7px;
+  font-size: 1.2em;
+  font-weight: 200;
+}
+
+
+.img-profile {
+  height: 20px;
+  width: 20px;
+}
+.rounded-circle {
+  vertical-align: middle;
+  border-style:  none;
+  border-radius: 50% !important;
+}
+
+/* .postUnitHeader {
+    filter: brightness(20%);
+    -webkit-filter: brightness(20%);
+} */
+
+.commentSection {
+  display: none;
+}
+
+
+.commentSection  ul li h5{
+  font-weight: 300;
+}
+
+
+.emptyComments {
+  font-size: 10px;
+  font-weight: normal;
+  color: gray;
+  text-align: center;
+  margin: 20px auto;
+}
+
+
+
+.rw {
+  display: flex;;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 5px;
+  color: white;
+  width: auto;
+}
+
+.rw div:first-child {
+  width: auto;
+  height: auto;
+}
+
+
+.rw div:nth-child(2){
+  width: auto;
+  height: auto;
+}
+
+
+/* Removing the blue outline in btns and text-inputs */
+
+input[type="text"] , textarea {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid #93e3fcb4 !important;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}

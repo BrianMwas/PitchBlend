@@ -1,0 +1,102 @@
+@layout('layouts.main');
+
+
+@section('content')
+<div class="container">
+  <div class="frm">
+    <div class="frm-wrap">
+      <div class="frm-head">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" height="100px" width="100px
+          "><path d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg>
+        <span>
+            <h2 class="text-white">Sign Up</h2>
+        </span>
+      </div>
+      <div class="frm-form">
+          @if(ers.length > 0)
+                <ul class="list-group">
+                  @each(error in ers)
+                    <li class="list-group item alert alert-warning alert-dismissible fade show px-3 my-1" role="alert">
+
+                            {{error.msg}}
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+
+                    </li>
+                  @endeach
+                </ul>
+          @endif
+          @if(success_msg != '')
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      {{success_msg}}
+                      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+              </div>
+          @endif
+
+           @if(error_msg != '')
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{error_msg}}
+                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+              </div>
+          @endif
+        <form action="/register" method="post">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" value="{{ data.username || ''}}"placeholder="Username" class="form-control form-control-sm" required>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="firstname">First name</label>
+                <input type="text" name="firstName" value="{{data.firstName || ''}}" placeholder="First name" class="form-control form-control-sm" required>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="secondname">Second Name</label>
+                <input type="text" name="secondName" value="{{data.secondName || ''}}" placeholder="Second name" class="form-control form-control-sm" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" value="{{ data.email || ''}}" placeholder="Enter your email here" class="form-control form-control-sm" required >
+
+          </div>
+          <div class="form-group">
+            <label for="password" class="float-left">Password</label>
+            <input type="password" name="password" value="{{ data.password  || '' }}" placeholder="Enter Password" class="form-control form-control-sm" required>
+          </div>
+          <div class="form-group">
+            <label for="password2" class="float-left">Repeat your password here</label>
+            <input type="password" name="password2" value="{{ data.password2 || ''}}" placeholder="Repeat Password" class="form-control form-control-sm" required>
+          </div>
+          <button type="submit" name="button" class="btn btn-primary w-100">Submit</button>
+        </form>
+        <hr class="mt-4">
+        <p class="text-center my-3 text-white">Register with</p>
+        <hr class="mb-2">
+        <div class="my-4 frm">
+          <ul>
+            <a href="#" class="mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="15px" height="15px"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"/></svg>
+            </a>
+            <a href="#" class="mr-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 512" height="15px" width ="15px" ><path d="M215.8 85H264V3.6C255.7 2.5 227.1 0 193.8 0 124.3 0 76.7 42.4 76.7 120.3V192H0v91h76.7v229h94V283h73.6l11.7-91h-85.3v-62.7c0-26.3 7.3-44.3 45.1-44.3z"/></svg>
+            </a>
+            <a href="#"  class="mr-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448.1 512" height="15px" width="15px"><path d="M100.3 448H7.4V148.9h92.9V448zM53.8 108.1C24.1 108.1 0 83.5 0 53.8S24.1 0 53.8 0s53.8 24.1 53.8 53.8-24.1 54.3-53.8 54.3zM448 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448h-.1z"/></svg>
+            </a>
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="20px" width="20px"><path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm-70.7 372c-68.8 0-124-55.5-124-124s55.2-124 124-124c31.3 0 60.1 11 83 32.3l-33.6 32.6c-13.2-12.9-31.3-19.1-49.4-19.1-42.9 0-77.2 35.5-77.2 78.1s34.2 78.1 77.2 78.1c32.6 0 64.9-19.1 70.1-53.3h-70.1v-42.6h116.9c1.3 6.8 1.9 13.6 1.9 20.7 0 70.8-47.5 121.2-118.8 121.2zm230.2-106.2v35.5H372v-35.5h-35.5v-35.5H372v-35.5h35.5v35.5h35.2v35.5h-35.2z"/></svg>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="/login" class="h6 text-white">Already have an account?..Sign In here</a>
+    </div>
+  </div>
+</div>
+@endsection

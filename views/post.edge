@@ -1,0 +1,80 @@
+ @layout('layouts.dashboard')
+
+@section('content')
+  <div class="container">
+        <header class="mb-5" style="background-image: url('/pageImages/piano.jpg')">
+            <div class="container text-center">
+                <h1 class="moveY"><span>Pitch</span><span>Blend</span></h1>
+            </div>
+        </header>
+        <div class="my-2">
+          <div class="btn-group">
+            <a href="/blogs/newpost" class="btn btn-success btn-sm">
+              <i class="fa fa-plus-circle"></i>
+              New
+            </a>
+
+            <button id="refreshPosts" class=" btn btn-primary btn-sm"><i class="fa fa-arrow-alt-circle-down"></i> Update Posts</button>
+            </div>
+        </div>
+        <div class="post">
+            @each(post in reversedPosts)
+                <div class="card my-2" style="width: 100%">
+                    <div class="user">
+                        <span>
+                            <img src="{{post.image}}" alt="pic" class="card-img-top userPhoto">
+                        </span>
+                        <span>
+                              <h3 class="fontweight-light h5" style="font-size: 100%">{{post.user_id.username}}</h3>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title" style="font-size: 130%">{{post.title}}</h3>
+                        <hr>
+                        <h4 class="card-subtitle" style="font-size: 100%">{{post.description}}</h4>
+                        <p class="card-text" style="height: 45px; overflow-y: hidden;">{{post.content}}</p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                              <a href="/blogs/post/{{post._id}}" class="btn btn-outline-primary btn-sm">Read More</a>
+                          </li>
+                          <li class="list-inline-item" >
+                              <button  class="btn btn-sm btn-success my-1 showComment">Comment</button>
+                          </li>
+                        </ul>
+                        <div class="commentSection" class="p-1">
+                          <hr>
+                          <div class='bounceIn'>
+                            <ul class="list-unstyled zoomOut" id="list-comment-section">
+                            @if(post.comments.length == 0)
+                              <div class="emptyComments">
+                                <p>No comments yet</p>
+                              </div>
+                            @else
+                                @each(comment in post.comments)
+                                  <li>
+                                    <h5>
+                                        <span style='font-size: .75em' class='font-weight-normal'>{{comment.user.username}}</span>
+                                        <span class='text-muted' style='font-size: .55em'>{{comment.createdAt.toDateString()}}</span>
+                                    </h5>
+                                    <p style='font-size: .7em' class='font-weight-normal'>{{comment.body}}</p>
+
+                                  <li>
+                                @endeach
+                            @endif
+                            </ul>
+
+                          </div>
+                          <form id="comment" class="my-1 commentForm" method="post" action="/blogs/post/{{post._id}}/comment"  data-userid={{post._id}} autocomplete="off">
+                            <div class="form-group">
+                              <input id="commentbdy" placeholder="Comment" class="form-control commentBody" name="comment" required />
+                            </div>
+                            <input type="Submit" class="btn btn-primary btn-sm" id="sbtComment" value="Comment"/>
+                          </form>
+                        </div>
+                    </div>
+                </div>
+            @endeach
+        </div>
+    </div>
+
+@endsection
