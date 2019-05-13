@@ -1,3 +1,3 @@
 module.exports = {
-  MongoURI : 'mongodb://localhost:27017/pdbp'
+  MongoURI : 'mongodb+srv://Brian:<nairobi>@pitchblend-g2kbw.mongodb.net/test?retryWrites=true'
 }

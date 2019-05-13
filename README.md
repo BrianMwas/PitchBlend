@@ -1,0 +1,1 @@
+A simple blogging website made using javascript
